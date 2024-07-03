@@ -1,0 +1,132 @@
+/*******************************************************************************
+ * ROFI SQUARED THEME USING THE MATERIAL DARKER PALETTE 
+ * User                 : Santa               
+ *******************************************************************************/
+
+
+* {
+    bg0: rgba(28, 31, 38, 80%); /* Ajustando para utilizar #1C1D26 con opacidad, para el fondo base */
+    bg1: rgba(242, 119, 152, 80%); /* Directamente para el fondo sólido, coherente con el esquema oscuro */
+    fg0: #FFFFFF; /* Rosa vibrante para el texto principal, asegura buena visibilidad */
+    fg1: rgba(255, 255, 255, 60%); /* Rosa con transparencia para texto secundario, suaviza el contraste */
+
+    accent-color: #79A2F2; /* Azul claro para elementos de acento, proporciona un contraste agradable */
+    urgent-color: #FFFFFF; /* Naranja para situaciones urgentes, destaca eficazmente */
+
+    background-color: transparent; /* Mantiene la transparencia para flexibilidad en la integración */
+    text-color: #FFFFFF; /* Rosa para texto general, unifica y da coherencia al diseño */
+    separator: #79D0F2; /* Azul claro para separadores, añade una sutileza visual y mantiene el esquema */
+    spacing: 2; /* Espaciado, sin cambios */
+}
+
+window {
+    location:   center;
+    border:     1;
+    padding:    1;
+    background-color:   @bg0;
+}
+
+message {
+    border:	2px 0px 0px;
+    border-color:	@separator;
+    padding:	1px;
+}
+
+inputbar {
+    spacing:    1px; 
+    padding:    1px;
+    text-color: @fg0;
+    background-color:   @bg1;
+}
+
+textbox {
+    text-color:	@f0;
+}
+
+case-indicator {
+    spacing:    0;
+    text-color: @f0;
+}
+
+entry {
+    placeholder: "Type to search";
+    placeholder-color: @fg1;
+    spacing:    0;
+    text-color: @f0;
+}
+
+prompt {
+    spacing:    0;
+    text-color: @f0;
+}
+
+inputbar {
+    children:	[ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+
+textbox-prompt-colon {
+    expand:     false;
+    str:        ":";
+    margin:     0px 0.3em 0em 0em ;
+    text-color: @f0;
+}
+
+mainbox {
+    border:	0;
+    padding:	0;
+}
+
+listview {
+    padding:    2px 0px 0px;
+    border:	2px 0px 0px;
+    border-color:   @separator;
+    fixed-height:   0;
+    scrollbar:	    true;
+    spacing:	2px;
+}
+
+scrollbar {
+    width:	4px;
+    border:	0;
+    handle-color: @fg0;
+    handle-width: 8px;
+    padding:	  0;
+}
+
+element {
+    border:	0px;
+    padding:    2px;
+}
+
+element normal normal {
+    text-color: @fg0;
+}
+
+element normal urgent {
+    text-color: @urgent-color;
+}
+
+element normal active {
+    text-color: @accent-color;
+}
+
+element selected {
+    text-color: @fg0;
+}
+
+element selected normal, element selected active {
+    background-color:   @accent-color;
+}
+
+element selected urgent {
+    background-color:   @urgent-color;
+}
+
+element-icon {
+    size:   0.8em;
+}
+
+element-text {
+    text-color: inherit;
+}
+
